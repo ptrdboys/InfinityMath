@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Barisan dan Deret - Infinity Math</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #8e44ad;
+      color: white;
+      padding: 40px;
+      border-bottom: 5px solid #6c3483;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #8e44ad;
+      margin-bottom: 20px;
+    }
+
+    .materi {
+      margin-bottom: 30px;
+      background-color: #ecf0f1;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .materi h3 {
+      font-size: 1.8rem;
+      color: #8e44ad;
+      margin-bottom: 15px;
+    }
+
+    .penjelasan {
+      font-size: 1.2rem;
+      color: #333;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    .example {
+      font-size: 1.2rem;
+      background-color: #f0f8ff;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .example pre {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.1rem;
+    }
+
+    .question-container {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .question-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .answer {
+      background-color: #d5f7d5;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .answer p {
+      font-weight: bold;
+      color: #27ae60;
+    }
+
+    .answer span {
+      font-weight: normal;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Infinity Math - Barisan dan Deret</h1>
+  </header>
+
+  <div class="container">
+    <h2>Pembelajaran Barisan dan Deret Kelas 10</h2>
+
+    <!-- Pengertian Barisan dan Deret -->
+    <div class="materi">
+      <h3>Apa Itu Barisan dan Deret?</h3>
+      <div class="penjelasan">
+        <p>Barisan adalah susunan bilangan yang teratur dan mengikuti suatu pola. Misalnya, <strong>1, 2, 3, 4, ...</strong> itu adalah barisan bilangan karena bilangan-bilangannya mengikuti pola penambahan satu.</p>
+        <p>Sementara deret adalah jumlah dari beberapa bilangan dalam sebuah barisan. Misalnya, deret dari barisan <strong>1, 2, 3, 4</strong> adalah <strong>1 + 2 + 3 + 4 = 10</strong>.</p>
+        <p>Jadi, barisan itu seperti susunan, dan deret itu seperti jumlah dari susunan tersebut. Senang kan? Yuk, kita gali lebih dalam! 🚀</p>
+      </div>
+    </div>
+
+    <!-- Barisan Aritmatika -->
+    <div class="materi">
+      <h3>Barisan Aritmatika</h3>
+      <div class="penjelasan">
+        <p>Barisan Aritmatika adalah barisan yang setiap sukunya diperoleh dengan cara menambahkan bilangan tetap pada suku sebelumnya. Ini seperti naik tangga, setiap langkah naik dengan jarak yang sama!</p>
+        <p>Misalnya, <strong>2, 5, 8, 11, ...</strong>. Nah, bilangan yang ditambahkan selalu <strong>3</strong>, jadi ini adalah barisan aritmatika dengan beda (selisih) 3.</p>
+        <p>Rumus untuk suku ke-n dari barisan aritmatika:</p>
+        <pre>a<sub>n</sub> = a<sub>1</sub> + (n - 1) × b</pre>
+        <p>Dimana:
+          <br>a<sub>n</sub> = suku ke-n
+          <br>a<sub>1</sub> = suku pertama
+          <br>b = beda antar suku
+          <br>n = urutan suku</p>
+      </div>
+    </div>
+
+    <!-- Deret Aritmatika -->
+    <div class="materi">
+      <h3>Deret Aritmatika</h3>
+      <div class="penjelasan">
+        <p>Deret Aritmatika adalah jumlah dari beberapa suku dalam barisan aritmatika. Misalnya, jika barisan aritmatika kita adalah <strong>2, 5, 8, 11</strong>, maka deretnya adalah <strong>2 + 5 + 8 + 11 = 26</strong>.</p>
+        <p>Rumus untuk jumlah deret aritmatika (S<sub>n</sub>) adalah:</p>
+        <pre>S<sub>n</sub> = (n / 2) × (2a<sub>1</sub> + (n - 1) × b)</pre>
+        <p>Dimana:
+          <br>S<sub>n</sub> = jumlah n suku pertama
+          <br>a<sub>1</sub> = suku pertama
+          <br>b = beda antar suku
+          <br>n = banyaknya suku yang dijumlahkan</p>
+      </div>
+    </div>
+
+    <!-- Barisan Geometri -->
+    <div class="materi">
+      <h3>Barisan Geometri</h3>
+      <div class="penjelasan">
+        <p>Barisan Geometri adalah barisan yang setiap sukunya diperoleh dengan cara mengalikan bilangan tetap pada suku sebelumnya. Ini seperti kalau kamu beli produk dengan diskon, harga barangnya terus dikalikan dengan faktor diskon!</p>
+        <p>Misalnya, <strong>3, 6, 12, 24, ...</strong>. Setiap bilangan diperoleh dengan mengalikan bilangan sebelumnya dengan <strong>2</strong>, jadi ini barisan geometri dengan rasio 2.</p>
+        <p>Rumus untuk suku ke-n dari barisan geometri:</p>
+        <pre>a<sub>n</sub> = a<sub>1</sub> × r<sup>n - 1</sup></pre>
+        <p>Dimana:
+          <br>a<sub>n</sub> = suku ke-n
+          <br>a<sub>1</sub> = suku pertama
+          <br>r = rasio antar suku
+          <br>n = urutan suku</p>
+      </div>
+    </div>
+
+    <!-- Deret Geometri -->
+    <div class="materi">
+      <h3>Deret Geometri</h3>
+      <div class="penjelasan">
+        <p>Deret Geometri adalah jumlah dari beberapa suku dalam barisan geometri. Jika barisan geometri kita adalah <strong>3, 6, 12, 24</strong>, maka deretnya adalah <strong>3 + 6 + 12 + 24 = 45</strong>.</p>
+        <p>Rumus untuk jumlah deret geometri (S<sub>n</sub>) adalah:</p>
+        <pre>S<sub>n</sub> = a<sub>1</sub> × (1 - r<sup>n</sup>) / (1 - r), jika r ≠ 1</pre>
+        <p>Dimana:
+          <br>S<sub>n</sub> = jumlah n suku pertama
+          <br>a<sub>1</sub> = suku pertama
+          <br>r = rasio antar suku
+          <br>n = banyaknya suku yang dijumlahkan</p>
+      </div>
+    </div>
+
+    <!-- Kolom Tanya Jawab -->
+    <div class="question-container">
+      <h3>Tanya Jawab Barisan dan Deret</h3>
+      <label for="question">Tanyakan tentang Barisan dan Deret:</label>
+      <input type="text" id="question" placeholder="Tanyakan soal atau materi tentang Barisan dan Deret...">
+      <div id="answer" class="answer">
+        <p>Masukkan pertanyaan Anda di atas untuk mendapatkan penjelasan tentang Barisan dan Deret.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const questionInput = document.getElementById('question');
+    const answerDiv = document.getElementById('answer');
+
+    questionInput.addEventListener('input', function() {
+      const question = questionInput.value.toLowerCase();
+      let answer = '';
+
+      if (question.includes('apa itu barisan')) {
+        answer = 'Barisan adalah susunan bilangan yang teratur, dan deret adalah jumlah dari bilangan-bilangan tersebut.';
+      } else if (question.includes('barisan aritmatika')) {
+        answer = 'Barisan aritmatika adalah barisan yang setiap sukunya diperoleh dengan menambahkan angka tetap (beda) pada suku sebelumnya.';
+      } else if (question.includes('deret aritmatika')) {
+        answer = 'Deret aritmatika adalah jumlah dari beberapa suku dalam barisan aritmatika, rumusnya S<sub>n</sub> = (n / 2) × (2a<sub>1</sub> + (n - 1) × b).';
+      } else if (question.includes('barisan geometri')) {
+        answer = 'Barisan geometri adalah barisan yang setiap sukunya diperoleh dengan mengalikan bilangan tetap pada suku sebelumnya, misalnya 3, 6, 12, 24.';
+      } else if (question.includes('deret geometri')) {
+        answer = 'Deret geometri adalah jumlah dari beberapa suku dalam barisan geometri, rumusnya S<sub>n</sub> = a<sub>1</sub> × (1 - r<sup>n</sup>) / (1 - r).';
+      } else {
+        answer = 'Maaf, saya tidak memahami pertanyaan Anda. Silakan coba tanyakan tentang materi barisan dan deret lainnya.';
+      }
+
+      answerDiv.innerHTML = `<p>${answer}</p>`;
+    });
+  </script>
+
+</body>
+</html>

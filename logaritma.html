@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Logaritma - Infinity Math</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #3498db;
+      color: white;
+      padding: 40px;
+      border-bottom: 5px solid #2980b9;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #3498db;
+      margin-bottom: 20px;
+    }
+
+    .materi {
+      margin-bottom: 30px;
+      background-color: #ecf0f1;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .materi h3 {
+      font-size: 1.6rem;
+      color: #2980b9;
+    }
+
+    .penjelasan {
+      font-size: 1.2rem;
+      color: #333;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    .penjelasan span {
+      font-weight: bold;
+      color: #2980b9;
+    }
+
+    .example {
+      font-size: 1.2rem;
+      background-color: #f0f8ff;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    .example pre {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.1rem;
+    }
+
+    .question-container {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .question-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .answer {
+      background-color: #d5f7d5;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .answer p {
+      font-weight: bold;
+      color: #27ae60;
+    }
+
+    .answer span {
+      font-weight: normal;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Infinity Math - Logaritma</h1>
+  </header>
+
+  <div class="container">
+    <h2>Pembelajaran Logaritma Kelas 10</h2>
+
+    <!-- Pengertian Logaritma -->
+    <div class="materi">
+      <h3>Apa Itu Logaritma?</h3>
+      <div class="penjelasan">
+        <p><span>Logaritma</span> adalah kebalikan dari perpangkatan, dan seperti kebalikan umumnya, logaritma juga sangat keren! 😎 Misalnya, kalau <strong>2<sup>3</sup> = 8</strong>, berarti <strong>log<sub>2</sub> 8 = 3</strong>! Gampang kan? Jadi, logaritma adalah cara untuk mencari eksponen atau pangkat dari suatu angka yang sudah dipangkatkan.</p>
+        <p>Begitu mudahnya logaritma, sampai-sampai bisa dibilang logaritma itu "superhero" dalam dunia matematika. 🦸‍♂️</p>
+      </div>
+    </div>
+
+    <!-- Sifat-Sifat Logaritma -->
+    <div class="materi">
+      <h3>Sifat-Sifat Logaritma</h3>
+      <div class="penjelasan">
+        <p>Logaritma nggak hanya jago di balik layar, tapi juga punya beberapa "super power". Ini dia beberapa sifat logaritma yang akan membuat kamu semakin jago:</p>
+        <ul>
+          <li><strong>Logaritma dari Perkalian:</strong><br>
+            <pre>log<sub>b</sub> (x × y) = log<sub>b</sub> x + log<sub>b</sub> y</pre>
+            Logaritma dari perkalian dua angka sama dengan penjumlahan logaritma kedua angka itu. Seperti kalau kita punya <strong>log<sub>2</sub> 6 × 8</strong>, jawabannya bisa kita ubah jadi <strong>log<sub>2</sub> 6 + log<sub>2</sub> 8</strong>! 😄
+          </li>
+          <li><strong>Logaritma dari Pembagian:</strong><br>
+            <pre>log<sub>b</sub> (x / y) = log<sub>b</sub> x - log<sub>b</sub> y</pre>
+            Jika kita punya pembagian dalam logaritma, itu sama dengan pengurangan logaritma kedua angka. Jadi misalnya <strong>log<sub>10</sub> 100 / 10</strong> = <strong>log<sub>10</sub> 100 - log<sub>10</sub> 10</strong>! Semudah membalikkan tangan! ✋
+          </li>
+          <li><strong>Logaritma dari Pangkat:</strong><br>
+            <pre>log<sub>b</sub> (x<sup>n</sup>) = n × log<sub>b</sub> x</pre>
+            Ini berarti kalau kita punya pangkat, kita tinggal mengalikan pangkatnya dengan logaritma dari angka itu. Jadi, <strong>log<sub>2</sub> (3<sup>4</sup>) = 4 × log<sub>2</sub> 3</strong>.</li>
+          <li><strong>Logaritma dari 1:</strong><br>
+            <pre>log<sub>b</sub> 1 = 0</pre>
+            Setiap logaritma dari angka 1, apapun basisnya, akan selalu menghasilkan 0. <strong>log<sub>3</sub> 1 = 0</strong>! 🎉
+          </li>
+          <li><strong>Logaritma dari Basis:</strong><br>
+            <pre>log<sub>b</sub> b = 1</pre>
+            Logaritma dari angka dengan basis yang sama selalu hasilnya 1. Kalau <strong>log<sub>2</sub> 2</strong> ya jawabannya 1! Gampang banget kan? 🤩
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Perubahan Basis Logaritma -->
+    <div class="materi">
+      <h3>Perubahan Basis Logaritma</h3>
+      <div class="penjelasan">
+        <p>Kalau logaritma seperti superhero, maka perubahan basis itu seperti trik ajaib yang memungkinkan kita bertransformasi dari satu basis ke basis lainnya! 😎</p>
+        <p>Jika kamu perlu mengubah basis, ini rumus yang bisa kamu gunakan:</p>
+        <pre>log<sub>a</sub> b = log<sub>c</sub> b / log<sub>c</sub> a</pre>
+        <p>Dengan ini, kita bisa mengubah logaritma apapun ke dalam basis yang kita inginkan! Misalnya, <strong>log<sub>2</sub> 8</strong> bisa kita ubah jadi <strong>log<sub>10</sub> 8 / log<sub>10</sub> 2</strong>.</p>
+      </div>
+    </div>
+
+    <!-- Logaritma dan Akar -->
+    <div class="materi">
+      <h3>Logaritma dan Akar</h3>
+      <div class="penjelasan">
+        <p>Logaritma juga dapat digunakan untuk menghitung akar! 💡 Berikut adalah rumusnya:</p>
+        <pre>log<sub>b</sub> √x = log<sub>b</sub> x<sup>1/2</sup> = 1/2 × log<sub>b</sub> x</pre>
+        <p>Jadi kalau kamu punya akar, tinggal ubah menjadi pangkat setengah, dan logaritma akan bekerja seperti biasa. Misalnya, <strong>log<sub>2</sub> √8</strong> sama dengan <strong>1/2 × log<sub>2</sub> 8</strong>.</p>
+      </div>
+    </div>
+
+    <!-- Kolom Tanya Jawab -->
+    <div class="question-container">
+      <h3>Tanya Jawab Logaritma</h3>
+      <label for="question">Tanyakan tentang Logaritma:</label>
+      <input type="text" id="question" placeholder="Tanyakan soal atau materi tentang Logaritma...">
+      <div id="answer" class="answer">
+        <p>Masukkan pertanyaan Anda di atas untuk mendapatkan penjelasan tentang Logaritma.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const questionInput = document.getElementById('question');
+    const answerDiv = document.getElementById('answer');
+
+    questionInput.addEventListener('input', function() {
+      const question = questionInput.value.toLowerCase();
+      let answer = '';
+
+      if (question.includes('apa itu logaritma')) {
+        answer = 'Logaritma adalah kebalikan dari perpangkatan. Jika a<sup>b</sup> = c, maka log<sub>a</sub> c = b.';
+      } else if (question.includes('sifat logaritma')) {
+        answer = 'Beberapa sifat logaritma yang penting adalah: logaritma dari perkalian, pembagian, dan pangkat.';
+      } else if (question.includes('perubahan basis')) {
+        answer = 'Untuk mengubah basis logaritma, kita gunakan rumus: log<sub>a</sub> b = log<sub>c</sub> b / log<sub>c</sub> a.';
+      } else if (question.includes('logaritma akar')) {
+        answer = 'Logaritma dari akar x adalah setengah dari logaritma x, yaitu log<sub>b</sub> √x = 1/2 × log<sub>b</sub> x.';
+      } else {
+        answer = 'Maaf, saya tidak memahami pertanyaan Anda. Silakan coba tanyakan tentang materi logaritma lainnya.';
+      }
+
+      answerDiv.innerHTML = `<p>${answer}</p>`;
+    });
+  </script>
+
+</body>
+</html>

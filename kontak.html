@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e); /* Navy and dark tones */
+            color: #f1f1f1; /* Light text for readability */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.1); /* Slight white background */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 36px;
+            color: #f1f1f1; /* Light color for the title */
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #e0e0e0; /* Slightly muted color for readability */
+        }
+        .profile-image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-top: 20px;
+            object-fit: cover;
+        }
+        .button {
+            background-color: #5e72e4; /* Blue tone for the button */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #4b61c2;
+        }
+        .math-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CONTACT</h1>
+        
+        <img id="profileImg" src="c:\Users\PUTRI RAHMA DINI\Downloads\dini.jpeg" alt="Foto Anda" class="profile-image">
+        <p><strong>Nama:</strong> Putri Rahma Dini</p>
+        <p><strong>NIM:</strong> 23510027</p>
+        <p><strong>Prodi:</strong> Pendidikan Matematika</p>
+        <p><strong>Instagram:</strong> put._.rd</p>
+        <a href="index.html" class="button">back</a>
+    </div>
+
+    <!-- Latar Belakang Matematis -->
+    <div class="math-background">
+        <span>π, ∑, √, ∞</span>
+    </div>
+
+    <script>
+        // Menambahkan script untuk mengganti gambar secara otomatis
+        let imageIndex = 0;
+        const images = [
+            "c:\\Users\\PUTRI RAHMA DINI\\Downloads\\dini.jpeg", // Ganti dengan path gambar pertama
+            "c:\\Users\\PUTRI RAHMA DINI\\Downloads\\rahma.jpeg"  // Ganti dengan path gambar kedua
+        ];
+
+        function changeImage() {
+            imageIndex = (imageIndex + 1) % images.length; // Berganti gambar
+            document.getElementById("profileImg").src = images[imageIndex];
+        }
+
+        setInterval(changeImage, 1000); // Ganti gambar setiap 3 detik
+    </script>
+</body>
+</html>

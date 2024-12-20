@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume Bangun Ruang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .btn-red {
+            background-color: red;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            margin-right: 10px;
+        }
+
+        .solution {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Volume Bangun Ruang</h1>
+        <p>Pilih bangun ruang yang ingin dihitung volumenya:</p>
+    </header>
+
+    <div class="container">
+        <div class="choice-container">
+            <button class="btn btn-secondary" onclick="showMaterial('kubus')">Volume Kubus</button>
+            <button class="btn btn-secondary" onclick="showMaterial('balok')">Volume Balok</button>
+            <button class="btn btn-secondary" onclick="showMaterial('bola')">Volume Bola</button>
+            <a href="index.html" class="btn btn-red">Kembali</a>
+        </div>
+
+        <div id="material" class="solution" style="display: none;"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Infinity Math</p>
+    </footer>
+
+    <script>
+        function showMaterial(shape) {
+            const materialElement = document.getElementById('material');
+            materialElement.style.display = 'block';
+
+            if (shape === 'kubus') {
+                materialElement.innerHTML = `
+                    <h2>Hitung Volume Kubus</h2>
+                    <p>Masukkan panjang sisi kubus:</p>
+                    <div class="input-group">
+                        <label for="side">Panjang sisi:</label>
+                        <input type="number" id="side" placeholder="cm">
+                    </div>
+                    <button class="btn btn-primary" onclick="calculateKubus()">Hitung</button>
+                `;
+            } else if (shape === 'balok') {
+                materialElement.innerHTML = `
+                    <h2>Hitung Volume Balok</h2>
+                    <p>Masukkan panjang, lebar, dan tinggi balok:</p>
+                    <div class="input-group">
+                        <label for="length">Panjang:</label>
+                        <input type="number" id="length" placeholder="cm">
+                    </div>
+                    <div class="input-group">
+                        <label for="width">Lebar:</label>
+                        <input type="number" id="width" placeholder="cm">
+                    </div>
+                    <div class="input-group">
+                        <label for="height">Tinggi:</label>
+                        <input type="number" id="height" placeholder="cm">
+                    </div>
+                    <button class="btn btn-primary" onclick="calculateBalok()">Hitung</button>
+                `;
+            } else if (shape === 'bola') {
+                materialElement.innerHTML = `
+                    <h2>Hitung Volume Bola</h2>
+                    <p>Masukkan jari-jari bola:</p>
+                    <div class="input-group">
+                        <label for="radius">Jari-jari:</label>
+                        <input type="number" id="radius" placeholder="cm">
+                    </div>
+                    <button class="btn btn-primary" onclick="calculateBola()">Hitung</button>
+                `;
+            }
+        }
+
+        function calculateKubus() {
+            const side = document.getElementById('side').value;
+            const volume = side * side * side;
+            alert(`Volume Kubus: ${volume} cm³`);
+        }
+
+        function calculateBalok() {
+            const length = document.getElementById('length').value;
+            const width = document.getElementById('width').value;
+            const height = document.getElementById('height').value;
+            const volume = length * width * height;
+            alert(`Volume Balok: ${volume} cm³`);
+        }
+
+        function calculateBola() {
+            const radius = document.getElementById('radius').value;
+            const volume = (4 / 3) * 3.14 * radius * radius * radius;
+            alert(`Volume Bola: ${volume} cm³`);
+        }
+    </script>
+</body>
+</html>

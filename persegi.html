@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luas Persegi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff7f50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-size: 18px;
+        }
+        input {
+            padding: 10px;
+            margin-top: 10px;
+            width: 60%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #ff4500;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+        .rumus {
+            font-style: italic;
+            color: #555;
+        }
+        .penjelasan {
+            text-align: left;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Persegi - Menghitung Luas</h1>
+</header>
+
+<div class="container">
+    <label for="sisi">Masukkan panjang sisi persegi (cm): </label><br>
+    <input type="number" id="sisi" placeholder="Masukkan panjang sisi" required><br>
+    <button onclick="hitungLuas()">Hitung Luas</button>
+
+    <div class="result" id="result"></div>
+    <div class="rumus" id="rumus"></div>
+    <div class="penjelasan" id="penjelasan"></div>
+</div>
+
+<script>
+    function hitungLuas() {
+        var sisi = document.getElementById("sisi").value;
+
+        if (sisi <= 0) {
+            alert("Panjang sisi harus lebih besar dari 0.");
+            return;
+        }
+
+        // Menghitung luas
+        var luas = sisi * sisi;
+
+        // Menampilkan hasil
+        document.getElementById("result").innerHTML = "Luas Persegi: " + luas + " cm²";
+
+        // Menampilkan rumus
+        document.getElementById("rumus").innerHTML = "Rumus: Luas = Sisi × Sisi";
+
+        // Penjelasan
+        document.getElementById("penjelasan").innerHTML = `
+            <p><strong>Penjelasan:</strong></p>
+            <p>Luas persegi dihitung dengan cara mengalikan panjang sisi persegi dengan dirinya sendiri. Jadi, jika sisi persegi adalah "s", maka rumus luasnya adalah:</p>
+            <p><em>Luas = s × s</em></p>
+            <p>Jika panjang sisi yang dimasukkan adalah ${sisi} cm, maka luas persegi adalah ${luas} cm².</p>
+        `;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #000000, #001f3f);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .back-arrow {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 28px;
+            color: white;
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .back-arrow:hover {
+            color: #00aaff;
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        input, textarea, button {
+            font-size: 1rem;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            width: 100%;
+        }
+
+        input, textarea {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        input:focus, textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        button {
+            background: linear-gradient(135deg, #001f3f, #004080);
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #004080, #0066cc);
+            transform: scale(1.05);
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.2;
+            animation: float 10s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-30px) translateX(15px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        .emoji:nth-child(4) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .emoji:nth-child(5) {
+            top: 50%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .emoji:nth-child(6) {
+            bottom: 20%;
+            left: 25%;
+            animation-delay: 4s;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            input, textarea, button {
+                font-size: 0.9rem;
+            }
+
+            .emoji {
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="nextpage.html" class="back-arrow">&#8592;</a>
+
+    <h1>We Value Your Feedback</h1>
+
+    <form>
+        <input type="text" placeholder="Enter your name" required aria-label="Name">
+        <textarea placeholder="Share your thoughts..." rows="5" required aria-label="Feedback"></textarea>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="emoji">😊</div>
+    <div class="emoji">😢</div>
+    <div class="emoji">😡</div>
+</body>
+</html>

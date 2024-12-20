@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Volume Bangun Ruang - Infinity Math</title>
+  <style>
+    body {
+      font-family: 'Verdana', sans-serif;
+      background-color: #e0f7fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #26a69a;
+      color: white;
+      padding: 50px;
+      border-bottom: 4px solid #4db6ac;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #26a69a;
+      margin-bottom: 20px;
+    }
+
+    .bangun {
+      margin-bottom: 30px;
+      background-color: #f0f4f4;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .bangun h3 {
+      font-size: 1.6rem;
+      color: #00796b;
+    }
+
+    .rumus {
+      font-size: 1.1rem;
+      color: #333;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .rumus span {
+      font-weight: bold;
+      color: #00796b;
+    }
+
+    .input-group {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .input-group input {
+      padding: 10px;
+      margin: 5px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+      width: 60%;
+    }
+
+    .input-group button {
+      padding: 10px 20px;
+      background-color: #26a69a;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .input-group button:hover {
+      background-color: #00796b;
+      transform: translateY(-5px);
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #2ecc71;
+      font-weight: bold;
+      display: none;
+    }
+
+    .result.error {
+      color: #e74c3c;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Infinity Math - Volume Bangun Ruang</h1>
+  </header>
+
+  <div class="container">
+
+    <h2>Pelajari Volume Bangun Ruang</h2>
+
+    <!-- Kubus -->
+    <div class="bangun">
+      <h3>Kubus</h3>
+      <div class="rumus">
+        <p><span>Rumus:</span> Volume = sisi × sisi × sisi = s³</p>
+        <p>Penjelasan: Untuk menghitung volume kubus, kita mengalikan panjang sisi kubus dengan dirinya sendiri sebanyak tiga kali.</p>
+      </div>
+      <div class="input-group">
+        <input type="number" id="kubus-sisi" placeholder="Masukkan panjang sisi (cm)" />
+        <button onclick="cekVolumeKubus()">Hitung Volume Kubus</button>
+        <div id="kubus-result" class="result"></div>
+      </div>
+    </div>
+
+    <!-- Balok -->
+    <div class="bangun">
+      <h3>Balok</h3>
+      <div class="rumus">
+        <p><span>Rumus:</span> Volume = panjang × lebar × tinggi</p>
+        <p>Penjelasan: Volume balok dihitung dengan mengalikan panjang, lebar, dan tinggi balok.</p>
+      </div>
+      <div class="input-group">
+        <input type="number" id="balok-panjang" placeholder="Masukkan panjang (cm)" />
+        <input type="number" id="balok-lebar" placeholder="Masukkan lebar (cm)" />
+        <input type="number" id="balok-tinggi" placeholder="Masukkan tinggi (cm)" />
+        <button onclick="cekVolumeBalok()">Hitung Volume Balok</button>
+        <div id="balok-result" class="result"></div>
+      </div>
+    </div>
+
+    <!-- Prisma -->
+    <div class="bangun">
+      <h3>Prisma</h3>
+      <div class="rumus">
+        <p><span>Rumus:</span> Volume = luas alas × tinggi</p>
+        <p>Penjelasan: Volume prisma dihitung dengan mengalikan luas alas dengan tinggi prisma.</p>
+      </div>
+      <div class="input-group">
+        <input type="number" id="prisma-luas-alas" placeholder="Masukkan luas alas (cm²)" />
+        <input type="number" id="prisma-tinggi" placeholder="Masukkan tinggi (cm)" />
+        <button onclick="cekVolumePrisma()">Hitung Volume Prisma</button>
+        <div id="prisma-result" class="result"></div>
+      </div>
+    </div>
+
+    <!-- Limas -->
+    <div class="bangun">
+      <h3>Limas</h3>
+      <div class="rumus">
+        <p><span>Rumus:</span> Volume = 1/3 × luas alas × tinggi</p>
+        <p>Penjelasan: Volume limas dihitung dengan cara mengalikan luas alas dengan tinggi, lalu membagi hasilnya dengan tiga.</p>
+      </div>
+      <div class="input-group">
+        <input type="number" id="limas-luas-alas" placeholder="Masukkan luas alas (cm²)" />
+        <input type="number" id="limas-tinggi" placeholder="Masukkan tinggi (cm)" />
+        <button onclick="cekVolumeLimas()">Hitung Volume Limas</button>
+        <div id="limas-result" class="result"></div>
+      </div>
+    </div>
+
+    <!-- Tabung -->
+    <div class="bangun">
+      <h3>Tabung</h3>
+      <div class="rumus">
+        <p><span>Rumus:</span> Volume = π × r² × t</p>
+        <p>Penjelasan: Volume tabung dihitung dengan mengalikan π (3.14) dengan kuadrat jari-jari dan tinggi tabung.</p>
+      </div>
+      <div class="input-group">
+        <input type="number" id="tabung-radius" placeholder="Masukkan radius (cm)" />
+        <input type="number" id="tabung-tinggi" placeholder="Masukkan tinggi (cm)" />
+        <button onclick="cekVolumeTabung()">Hitung Volume Tabung</button>
+        <div id="tabung-result" class="result"></div>
+      </div>
+    </div>
+
+    <!-- Kerucut -->
+    <div class="bangun">
+      <h3>Kerucut</h3>
+      <div class="rumus">
+        <p><span>Rumus:</span> Volume = 1/3 × π × r² × t</p>
+        <p>Penjelasan: Volume kerucut dihitung dengan mengalikan 1/3, π (3.14), kuadrat jari-jari, dan tinggi kerucut.</p>
+      </div>
+      <div class="input-group">
+        <input type="number" id="kerucut-radius" placeholder="Masukkan radius (cm)" />
+        <input type="number" id="kerucut-tinggi" placeholder="Masukkan tinggi (cm)" />
+        <button onclick="cekVolumeKerucut()">Hitung Volume Kerucut</button>
+        <div id="kerucut-result" class="result"></div>
+      </div>
+    </div>
+
+    <!-- Bola -->
+    <div class="bangun">
+      <h3>Bola</h3>
+      <div class="rumus">
+        <p><span>Rumus:</span> Volume = 4/3 × π × r³</p>
+        <p>Penjelasan: Volume bola dihitung dengan mengalikan 4/3, π (3.14), dan kuadrat jari-jari bola.</p>
+      </div>
+      <div class="input-group">
+        <input type="number" id="bola-radius" placeholder="Masukkan radius (cm)" />
+        <button onclick="cekVolumeBola()">Hitung Volume Bola</button>
+        <div id="bola-result" class="result"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Fungsi untuk menghitung volume masing-masing bangun ruang
+    function cekVolumeKubus() {
+      var sisi = parseFloat(document.getElementById('kubus-sisi').value);
+      var result = document.getElementById('kubus-result');
+      
+      if (isNaN(sisi)) {
+        result.textContent = 'Masukkan nilai yang valid!';
+        result.classList.add('error');
+        result.style.display = 'block';
+      } else {
+        var volume = Math.pow(sisi, 3);
+        result.textContent = 'Volume Kubus = ' + volume + ' cm³';
+        result.classList.remove('error');
+        result.style.display = 'block';
+      }
+    }
+
+    function cekVolumeBalok() {
+      var panjang = parseFloat(document.getElementById('balok-panjang').value);
+      var lebar = parseFloat(document.getElementById('balok-lebar').value);
+      var tinggi = parseFloat(document.getElementById('balok-tinggi').value);
+      var result = document.getElementById('balok-result');
+      
+      if (isNaN(panjang) || isNaN(lebar) || isNaN(tinggi)) {
+        result.textContent = 'Masukkan nilai yang valid!';
+        result.classList.add('error');
+        result.style.display = 'block';
+      } else {
+        var volume = panjang * lebar * tinggi;
+        result.textContent = 'Volume Balok = ' + volume + ' cm³';
+        result.classList.remove('error');
+        result.style.display = 'block';
+      }
+    }
+
+    function cekVolumePrisma() {
+      var luasAlas = parseFloat(document.getElementById('prisma-luas-alas').value);
+      var tinggi = parseFloat(document.getElementById('prisma-tinggi').value);
+      var result = document.getElementById('prisma-result');
+      
+      if (isNaN(luasAlas) || isNaN(tinggi)) {
+        result.textContent = 'Masukkan nilai yang valid!';
+        result.classList.add('error');
+        result.style.display = 'block';
+      } else {
+        var volume = luasAlas * tinggi;
+        result.textContent = 'Volume Prisma = ' + volume + ' cm³';
+        result.classList.remove('error');
+        result.style.display = 'block';
+      }
+    }
+
+    function cekVolumeLimas() {
+      var luasAlas = parseFloat(document.getElementById('limas-luas-alas').value);
+      var tinggi = parseFloat(document.getElementById('limas-tinggi').value);
+      var result = document.getElementById('limas-result');
+      
+      if (isNaN(luasAlas) || isNaN(tinggi)) {
+        result.textContent = 'Masukkan nilai yang valid!';
+        result.classList.add('error');
+        result.style.display = 'block';
+      } else {
+        var volume = (1/3) * luasAlas * tinggi;
+        result.textContent = 'Volume Limas = ' + volume + ' cm³';
+        result.classList.remove('error');
+        result.style.display = 'block';
+      }
+    }
+
+    function cekVolumeTabung() {
+      var radius = parseFloat(document.getElementById('tabung-radius').value);
+      var tinggi = parseFloat(document.getElementById('tabung-tinggi').value);
+      var result = document.getElementById('tabung-result');
+      
+      if (isNaN(radius) || isNaN(tinggi)) {
+        result.textContent = 'Masukkan nilai yang valid!';
+        result.classList.add('error');
+        result.style.display = 'block';
+      } else {
+        var volume = 3.14 * Math.pow(radius, 2) * tinggi;
+        result.textContent = 'Volume Tabung = ' + volume + ' cm³';
+        result.classList.remove('error');
+        result.style.display = 'block';
+      }
+    }
+
+    function cekVolumeKerucut() {
+      var radius = parseFloat(document.getElementById('kerucut-radius').value);
+      var tinggi = parseFloat(document.getElementById('kerucut-tinggi').value);
+      var result = document.getElementById('kerucut-result');
+      
+      if (isNaN(radius) || isNaN(tinggi)) {
+        result.textContent = 'Masukkan nilai yang valid!';
+        result.classList.add('error');
+        result.style.display = 'block';
+      } else {
+        var volume = (1/3) * 3.14 * Math.pow(radius, 2) * tinggi;
+        result.textContent = 'Volume Kerucut = ' + volume + ' cm³';
+        result.classList.remove('error');
+        result.style.display = 'block';
+      }
+    }
+
+    function cekVolumeBola() {
+      var radius = parseFloat(document.getElementById('bola-radius').value);
+      var result = document.getElementById('bola-result');
+      
+      if (isNaN(radius)) {
+        result.textContent = 'Masukkan nilai radius yang valid!';
+        result.classList.add('error');
+        result.style.display = 'block';
+      } else {
+        var volume = (4/3) * 3.14 * Math.pow(radius, 3);
+        result.textContent = 'Volume Bola = ' + volume + ' cm³';
+        result.classList.remove('error');
+        result.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>

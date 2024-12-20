@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Peluang - Infinity Math</title>
+  <style>
+    body {
+      font-family: 'Verdana', sans-serif;
+      background-color: #f0f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      background-color: #2ecc71;
+      color: white;
+      padding: 50px;
+      border-bottom: 4px solid #27ae60;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .container h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #2ecc71;
+      margin-bottom: 20px;
+    }
+
+    .materi {
+      margin-bottom: 30px;
+      background-color: #ecf0f1;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .materi h3 {
+      font-size: 1.6rem;
+      color: #27ae60;
+    }
+
+    .penjelasan {
+      font-size: 1.2rem;
+      color: #333;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .penjelasan span {
+      font-weight: bold;
+      color: #27ae60;
+    }
+
+    .input-group {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .input-group input {
+      padding: 10px;
+      margin: 5px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+      width: 60%;
+    }
+
+    .input-group button {
+      padding: 10px 20px;
+      background-color: #2ecc71;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .input-group button:hover {
+      background-color: #27ae60;
+      transform: translateY(-5px);
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #2ecc71;
+      font-weight: bold;
+      display: none;
+    }
+
+    .result.error {
+      color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Infinity Math - Peluang</h1>
+  </header>
+
+  <div class="container">
+
+    <h2>Pembelajaran Peluang</h2>
+
+    <!-- Pengertian Peluang -->
+    <div class="materi">
+      <h3>Peluang (Probability)</h3>
+      <div class="penjelasan">
+        <p><span>Apa itu Peluang?</span><br>
+        Peluang adalah suatu ukuran kemungkinan terjadinya suatu kejadian. Dalam kehidupan sehari-hari, kita sering menghadapi peristiwa yang memiliki kemungkinan terjadinya tertentu. Peluang dinyatakan dengan angka antara 0 dan 1, dimana 0 berarti kejadian tidak mungkin terjadi, dan 1 berarti kejadian pasti terjadi.</p>
+        <p><span>Rumus Peluang:</span><br>
+        Peluang suatu kejadian dapat dihitung dengan rumus:</p>
+        <pre>P(A) = (Jumlah Kejadian yang Diinginkan) / (Jumlah Kejadian yang Mungkin)</pre>
+        <p>Contoh: Jika kita melempar dadu, peluang mendapatkan angka 3 adalah 1/6, karena ada 6 sisi dan hanya satu sisi yang menunjukkan angka 3.</p>
+      </div>
+    </div>
+
+    <!-- Kejadian Menyenangkan dan Tidak Menyenangkan -->
+    <div class="materi">
+      <h3>Kejadian Menyenangkan dan Tidak Menyenangkan</h3>
+      <div class="penjelasan">
+        <p><span>Keystone:</span><br> Kejadian menyenangkan adalah kejadian yang kita harapkan terjadi, sedangkan kejadian tidak menyenangkan adalah kejadian yang tidak kita harapkan terjadi.</p>
+        <p>Contoh: Jika kita melempar koin, kejadian mendapatkan gambar adalah kejadian menyenangkan bagi orang yang berharap gambar, dan kejadian mendapatkan angka adalah kejadian tidak menyenangkan jika kita berharap gambar.</p>
+      </div>
+    </div>
+
+    <!-- Peluang Terkomplementer -->
+    <div class="materi">
+      <h3>Peluang Terkomplementer</h3>
+      <div class="penjelasan">
+        <p><span>Konsep:</span><br>Peluang terkomplementer dari suatu kejadian A adalah peluang dari kejadian yang tidak terjadi, yaitu kejadian yang berlawanan dengan kejadian A. Jika peluang A terjadi adalah P(A), maka peluang A tidak terjadi adalah P(A') = 1 - P(A).</p>
+        <p>Contoh: Jika peluang hujan hari ini adalah 0.8, maka peluang tidak hujan adalah 1 - 0.8 = 0.2.</p>
+      </div>
+    </div>
+
+    <!-- Kejadian Saling Bebas -->
+    <div class="materi">
+      <h3>Kejadian Saling Bebas</h3>
+      <div class="penjelasan">
+        <p><span>Definisi:</span><br>Kejadian saling bebas adalah kejadian yang satu tidak memengaruhi kejadian lainnya. Jika A dan B adalah dua kejadian saling bebas, maka peluang terjadinya A dan B adalah hasil perkalian peluang A dan B.</p>
+        <pre>P(A ∩ B) = P(A) × P(B)</pre>
+        <p>Contoh: Jika kita melempar dua buah dadu, peluang mendapatkan angka 3 pada dadu pertama dan angka 4 pada dadu kedua adalah 1/6 × 1/6 = 1/36.</p>
+      </div>
+    </div>
+
+    <!-- Kejadian Tidak Saling Bebas -->
+    <div class="materi">
+      <h3>Kejadian Tidak Saling Bebas</h3>
+      <div class="penjelasan">
+        <p><span>Definisi:</span><br>Kejadian tidak saling bebas adalah kejadian yang satu memengaruhi kejadian lainnya. Jika A dan B adalah kejadian yang tidak saling bebas, maka peluang terjadinya A dan B tidak dapat dihitung dengan perkalian peluang A dan B.</p>
+        <pre>P(A ∩ B) = P(A) × P(B | A)</pre>
+        <p>Contoh: Dalam undian, jika kamu memilih 2 kartu dari 5 kartu yang ada, peluang memilih 2 kartu tertentu akan berubah karena pemilihan pertama memengaruhi pemilihan kedua.</p>
+      </div>
+    </div>
+
+    <!-- Kombinasi dan Permutasi -->
+    <div class="materi">
+      <h3>Kombinasi dan Permutasi</h3>
+      <div class="penjelasan">
+        <p><span>Permutasi:</span><br>Permutasi adalah susunan atau urutan objek yang diperhitungkan. Rumus permutasi adalah:</p>
+        <pre>P(n, r) = n! / (n - r)!</pre>
+        <p>Contoh: Jika kita memiliki 5 bola dan ingin memilih 2 bola, berapa banyak cara kita bisa menyusunnya? Jawabannya adalah permutasi dari 5 bola diambil 2.</p>
+        <p><span>Kombinasi:</span><br>Kombinasi adalah pemilihan objek tanpa memperhatikan urutan. Rumus kombinasi adalah:</p>
+        <pre>C(n, r) = n! / (r!(n - r)!)</pre>
+        <p>Contoh: Jika kita memiliki 5 bola dan ingin memilih 2 bola, berapa banyak cara kita bisa memilihnya tanpa memperhatikan urutan? Jawabannya adalah kombinasi dari 5 bola diambil 2.</p>
+      </div>
+    </div>
+
+    <!-- Latihan Soal Peluang -->
+    <div class="materi">
+      <h3>Latihan Soal Peluang</h3>
+      <div class="penjelasan">
+        <p><span>Soal 1:</span><br>Jika kamu melempar dua koin, berapa peluang mendapatkan dua gambar?</p>
+        <div class="input-group">
+          <input type="number" id="peluang-soal1" placeholder="Masukkan jawaban (0-1)" />
+          <button onclick="cekPeluangSoal1()">Cek Jawaban</button>
+          <div id="soal1-result" class="result"></div>
+        </div>
+        <p><span>Soal 2:</span><br>Jika peluang hujan adalah 0.7, berapa peluang tidak hujan?</p>
+        <div class="input-group">
+          <input type="number" id="peluang-soal2" placeholder="Masukkan jawaban (0-1)" />
+          <button onclick="cekPeluangSoal2()">Cek Jawaban</button>
+          <div id="soal2-result" class="result"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Fungsi untuk mengecek jawaban soal
+    function cekPeluangSoal1() {
+      var jawaban = parseFloat(document.getElementById('peluang-soal1').value);
+      var result = document.getElementById('soal1-result');
+      
+      if (isNaN(jawaban)) {
+        result.textContent = 'Masukkan jawaban yang valid!';
+        result.classList.add('error');
+        result.style.display = 'block';
+      } else {
+        var peluang = 1 / 4;
+        if (jawaban === peluang) {
+          result.textContent = 'Jawaban benar! Peluang mendapatkan dua gambar adalah 0.25';
+          result.classList.remove('error');
+          result.style.display = 'block';
+        } else {
+          result.textContent = 'Jawaban salah, coba lagi!';
+          result.classList.add('error');
+          result.style.display = 'block';
+        }
+      }
+    }
+
+    function cekPeluangSoal2() {
+      var jawaban = parseFloat(document.getElementById('peluang-soal2').value);
+      var result = document.getElementById('soal2-result');
+      
+      if (isNaN(jawaban)) {
+        result.textContent = 'Masukkan jawaban yang valid!';
+        result.classList.add('error');
+        result.style.display = 'block';
+      } else {
+        var peluang = 0.3;
+        if (jawaban === peluang) {
+          result.textContent = 'Jawaban benar! Peluang tidak hujan adalah 0.3';
+          result.classList.remove('error');
+          result.style.display = 'block';
+        } else {
+          result.textContent = 'Jawaban salah, coba lagi!';
+          result.classList.add('error');
+          result.style.display = 'block';
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

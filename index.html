@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Math</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, #ffeb3b, #fdd835);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 400;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffeb3b;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #ffeb3b, #fdd835, #ff9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero .cta {
+            background-color: #ffeb3b;
+            color: #1a237e;
+            padding: 0.8rem 2rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .hero .cta:hover {
+            background-color: #fdd835;
+            transform: scale(1.05);
+        }
+
+        .background-math {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .background-math span {
+            position: absolute;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.15);
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+
+        .adventure-elements {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .adventure-elements .adventure {
+            display: inline-block;
+            margin: 1rem;
+            padding: 2rem;
+            width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .adventure-elements .adventure:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .adventure-elements .adventure h2 {
+            margin: 0 0 1rem 0;
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, #ff9800, #ffeb3b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .adventure-elements .adventure p {
+            font-size: 1rem;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Infinity Math</div>
+        <nav>
+         
+            
+            <a href="kontak.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Jelajahi Tak Terbatasnya Dunia Matematika</h1>
+        <p>Your Adventure Awaits !</p>
+        <a href="buka.html"><button class="cta">Let's Go !</button></a>
+    </section>
+
+    <div class="background-math">
+        <!-- Dynamic floating math symbols -->
+        <span style="top: 10%; left: 15%; animation-duration: 12s;">&#x221E;</span>
+        <span style="top: 25%; left: 35%; animation-duration: 10s;">e<sup>i&#x3C0;</sup> + 1 = 0</span>
+        <span style="top: 50%; left: 10%; animation-duration: 8s;">x + y = z</span>
+        <span style="top: 60%; left: 50%; animation-duration: 9s;">&#x221A;49</span>
+        <span style="top: 20%; left: 70%; animation-duration: 11s;">a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></span>
+        <span style="top: 75%; left: 30%; animation-duration: 10s;">y = mx + b</span>
+        <span style="top: 90%; left: 60%; animation-duration: 12s;">f(x) = x<sup>3</sup></span>
+    </div>
+
+    <section class="adventure-elements">
+        <div class="adventure">
+            <h2>Albert Einstein</h2>
+            <p>Hal yang paling tidak dapat dipahami tentang dunia adalah bahwa dunia ini dapat dipahami</p>
+        </div>
+        <div class="adventure">
+            <h2>Jerome Polin</h2>
+            <p>Matematika adalah bahasa universal yang membantu kita memahami dunia di sekitar kita</p>
+        </div>
+        <div class="adventure">
+            <h2>Putri Rahma</h2>
+            <p>Apa yang menantang itu justru yang membuatnya keren, bukan?</p>
+        </div>
+    </section>
+</body>
+</html>

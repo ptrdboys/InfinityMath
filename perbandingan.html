@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Perbandingan - Infinity Math</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: radial-gradient(circle at 50% 50%, #2c3e50, #34495e, #1abc9c);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px 50px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 900px;
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #f1c40f;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(241, 196, 15, 0.7);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-top: 20px;
+      color: #f1c40f;
+    }
+
+    .materi {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      color: #ecf0f1;
+      background-color: #34495e;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .penjelasan {
+      font-size: 1.1rem;
+      color: #ecf0f1;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 8px;
+    }
+
+    .form-group label {
+      font-size: 1rem;
+      color: #f1c40f;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 6px;
+      margin-top: 4px;
+      border-radius: 4px;
+      border: 1px solid #f1c40f;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #f1c40f;
+      color: #34495e;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    button:hover {
+      background-color: #e67e22;
+    }
+
+    #hasil {
+      font-size: 1rem;
+      margin-top: 12px;
+      color: #f1c40f;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      width: 100%;
+      height: 350px;
+      padding: 10px 0;
+      gap: 20px;
+      scroll-snap-type: x mandatory;
+      position: relative;
+      perspective: 1500px;
+      margin-top: 40px;
+    }
+
+    .scroll-item {
+      flex: 0 0 auto;
+      width: 70%;
+      height: 100%;
+      background: linear-gradient(145deg, rgba(44, 62, 80, 0.7), rgba(52, 152, 219, 0.8));
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+      scroll-snap-align: center;
+      transition: transform 0.5s ease-in-out;
+      background-color: #2980b9;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .scroll-item:hover {
+      transform: rotateY(5deg);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .scroll-item h3 {
+      color: #f1c40f;
+      font-size: 1.2rem;
+    }
+
+    .scroll-item p, .scroll-item ul {
+      color: #ecf0f1;
+      font-size: 1rem;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: transparent;
+      border: none;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      z-index: 15;
+      transition: color 0.3s ease;
+    }
+
+    .back-button:hover {
+      color: #f1c40f;
+    }
+
+    .background-math {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .background-math span {
+      position: absolute;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.2);
+      animation: float 15s infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(10deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+
+    /* Adjust scroll bar */
+    .scroll-container::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .scroll-container::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: rgba(52, 152, 219, 0.7);
+      border-radius: 10px;
+    }
+
+    .scroll-container::-webkit-scrollbar-thumb:hover {
+      background: #3498db;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back button -->
+  <button class="back-button" onclick="window.location.href='nextpage.html'">&#8592; back</button>
+
+  <div class="background-math">
+    <span style="top: 10%; left: 20%;">3.14</span>
+    <span style="top: 30%; left: 40%;">&#x221E;</span>
+    <span style="top: 50%; left: 10%;">x + y = z</span>
+    <span style="top: 70%; left: 50%;">&#x221A;25</span>
+    <span style="top: 20%; left: 70%;">e<sup>i&#x3C0;</sup> + 1 = 0</span>
+    <span style="top: 60%; left: 80%;">&#x3C3;</span>
+    <span style="top: 15%; left: 35%;">y = mx + b</span>
+    <span style="top: 45%; left: 65%;">a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></span>
+    <span style="top: 75%; left: 25%;">log<sub>10</sub>100</span>
+    <span style="top: 85%; left: 55%;">f(x) = x<sup>2</sup></span>
+  </div>
+
+  <div class="container">
+    <h1>Perbandingan - Infinity Math</h1>
+    <h2>Pelajari Perbandingan</h2>
+
+    <!-- Materi Perbandingan -->
+    <div class="scroll-container">
+      <!-- Materi 1: Pengenalan Perbandingan -->
+      <div class="scroll-item">
+        <h3>1. Pengenalan Perbandingan</h3>
+        <p><span>Perbandingan</span> adalah pembanding antara dua besaran atau lebih. Perbandingan dapat dinyatakan dalam bentuk pecahan, rasio, atau persentase. Ini berguna untuk membandingkan berbagai hal dalam kehidupan sehari-hari.</p>
+      </div>
+
+      <!-- Materi 2: Apa Itu Perbandingan? -->
+      <div class="scroll-item">
+        <h3>2. Apa Itu Perbandingan?</h3>
+        <p><span>Perbandingan</span> menunjukkan hubungan antara dua nilai. Perbandingan sering digunakan untuk membandingkan jumlah, ukuran, atau jumlah objek.</p>
+        <ul>
+          <li><span>Contoh:</span> Jika ada 3 apel dan 2 jeruk, perbandingannya adalah 3:2.</li>
+        </ul>
+      </div>
+
+      <!-- Materi 3: Cara Menyatakan Perbandingan -->
+      <div class="scroll-item">
+        <h3>3. Cara Menyatakan Perbandingan</h3>
+        <p>Perbandingan dapat disajikan dalam tiga bentuk: rasio, pecahan, dan persentase. Ketiga bentuk ini mengandung informasi yang sama, tetapi disajikan dalam cara yang berbeda.</p>
+        <ul>
+          <li><span>Rasio:</span> 3:2</li>
+          <li><span>Pecahan:</span> 3/2</li>
+          <li><span>Persentase:</span> 150%</li>
+        </ul>
+      </div>
+
+      <!-- Materi 4: Perbandingan Berdasarkan Jumlah -->
+      <div class="scroll-item">
+        <h3>4. Perbandingan Berdasarkan Jumlah</h3>
+        <p>Perbandingan berdasarkan jumlah menggambarkan bagaimana satu jumlah berkaitan dengan jumlah lainnya.</p>
+        <ul>
+          <li><span>Contoh:</span> Jika ada 20 siswa perempuan dan 10 siswa laki-laki, perbandingan jumlah siswa perempuan dan laki-laki adalah 20:10 atau 2:1.</li>
+        </ul>
+      </div>
+
+      <!-- Materi 5: Perbandingan Berdasarkan Besaran -->
+      <div class="scroll-item">
+        <h3>5. Perbandingan Berdasarkan Besaran</h3>
+        <p>Perbandingan berdasarkan besaran membandingkan dua besaran yang berbeda. Besaran ini dapat berupa panjang, berat, waktu, dan lain-lain.</p>
+        <ul>
+          <li><span>Contoh:</span> Sebuah kain sepanjang 4 meter dibandingkan dengan kain sepanjang 2 meter. Perbandingan panjang kain tersebut adalah 4:2 atau 2:1.</li>
+        </ul>
+      </div>
+
+      <!-- Materi 6: Perbandingan dalam Kehidupan Sehari-hari -->
+      <div class="scroll-item">
+        <h3>6. Perbandingan dalam Kehidupan Sehari-hari</h3>
+        <p>Perbandingan digunakan dalam banyak aspek kehidupan sehari-hari, seperti membandingkan harga barang, waktu, dan sebagainya.</p>
+        <ul>
+          <li><span>Contoh:</span> Jika 5 kg apel berharga Rp 50.000, maka harga 1 kg apel adalah Rp 10.000. Perbandingan harga apel dan beratnya adalah 50.000:5.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Learn more at <a href="#">Infinity Math</a></p>
+    </div>
+  </div>
+</body>
+</html>
